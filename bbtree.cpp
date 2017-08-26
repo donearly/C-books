@@ -169,8 +169,3 @@ Status InsertAVL(BSTree &t,ElemType e,bool &taller)
 	}
 	return SUCCESS;
 }
-
-int main()
-{
-	return 0;
-}
