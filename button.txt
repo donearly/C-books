@@ -1,2 +1,21 @@
 http://blog.csdn.net/lmj623565791/article/details/24555655
 http://blog.csdn.net/ys743276112/article/details/52316588
+/*设置背景圆角*/
+ private void setRoundedBackground() {
+        Drawable d = this.getBackground();
+        if (d instanceof BitmapDrawable) {
+            RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(getResources(), ((BitmapDrawable) d).getBitmap());
+            drawable.setCornerRadius(mRoundedRadius);
+            this.setBackgroundDrawable(drawable);
+        } else {
+            int bordor = Color.parseColor("#CFCFCF");
+            if (d instanceof ColorDrawable) {
+                bgColor = ((ColorDrawable) d).getColor();
+            }
+            GradientDrawable gd = new GradientDrawable();
+            gd.setColor(bgColor);
+            gd.setCornerRadius(mRoundedRadius);
+            gd.setStroke(1, bordor);
+            this.setBackgroundDrawable(gd);
+        }
+    }
