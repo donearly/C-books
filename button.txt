@@ -20,3 +20,16 @@ http://blog.csdn.net/qq_28057577/article/details/52847275
             this.setBackgroundDrawable(gd);
         }
     }
+
+
+
+
+private void setStatusBarIconDark(boolean dark){  
+try{  
+    Object win = getWindow();     
+    Class<?> cls = win.getClass();  
+    Method method = cls.getDeclaredMethod("setStatusBarIconDark",boolean.class);  
+    method.invoke(win,dark);  
+} catch(Exception e){     
+    Log.v("ff","statusBarIconDark,e="+e);     
+}  
